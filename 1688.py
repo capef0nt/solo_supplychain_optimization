@@ -1,5 +1,10 @@
 from playwright.sync_api import sync_playwright
 
+
+# proxy = {
+
+#     "server": 
+# }
 def login_and_save_session():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
@@ -56,5 +61,5 @@ def fetch_orders():
         browser.close()
 
 if __name__ == "__main__":
-    # login_and_save_session()  # Run this once to save your session
+    #login_and_save_session()  # Run this once to save your session
     fetch_orders()            # Fetch orders using saved session

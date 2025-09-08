@@ -120,6 +120,7 @@ def clean_order_data(order):
 for order_id in order_ids:
     raw_order = fetch_order_details(order_id, session)
     if raw_order:
+        print(raw_order)
         cleaned_order = clean_order_data(raw_order)
         collection.update_one({"_id": cleaned_order["_id"]}, {"$set": cleaned_order}, upsert=True)
 
